@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
+      <p>Taking control of my finances by Recording, Categorizing and Analysing my spending</p>
       <div class="container">
       <div className="left-panel">
           <SearchBar searchTerm={searchTerm} onSearchChange={handleSearchChange} />

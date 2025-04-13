@@ -4,7 +4,8 @@ function ExpenseForm({ onAddExpense }) {
   const [formData, setFormData] = useState({
     description: "",
     amount: "",
-    category: ""
+    category: "",
+    date: ""
   });
 
   const handleChange = (e) => {
@@ -19,7 +20,7 @@ function ExpenseForm({ onAddExpense }) {
       amount: parseFloat(formData.amount)
     };
     onAddExpense(newExpense);
-    setFormData({ description: "", amount: "", category: "" });
+    setFormData({ description: "", amount: "", category: "" ,date:"" });
   };
 
   return (
@@ -27,6 +28,7 @@ function ExpenseForm({ onAddExpense }) {
       <input name="description" placeholder="Description" value={formData.description} onChange={handleChange} required />
       <input name="amount" type="number" placeholder="Amount" value={formData.amount} onChange={handleChange} required />
       <input name="category" placeholder="Category" value={formData.category} onChange={handleChange} required />
+      <input name="date" type="date" value={formData.date} onChange={handleChange} required />
       <button type="submit">Add Expense</button>
     </form>
   );
